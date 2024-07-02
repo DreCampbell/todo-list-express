@@ -18,16 +18,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Todo List: </h1> <!--Heading for the Todo List-->
-    <ul class="todoItems"> <!--The list of tasks to complete-->
-    <% for(let i=0; i < items.length; i++) {%> <!--Setting up a loop-->
-        <li class="item"> <!--An item in the Todo List-->
-            <% if(items[i].completed === true) {%> <!--A conditional if the item has a completed class of true, add the completed class-->
-                <span class='completed'><%= items[i].thing %></span> <!--Thing is the request.body containing the task-->
-            <% }else{ %>
-                <span><%= items[i].thing %></span> <!--If the condition is not met, do not add the completed class -->
-            <% } %>    
-            <span class='fa fa-trash'></span> <!--A font awesome trashcan icon -->
+    <h1>Todo List: </h1> 
+    <ul class="todoItems"> 
+    <% for(let i=0; i < items.length; i++) {%> 
+        <li class="item"> 
+            <% if(items[i].completed === true) {%> 
+                <span class='completed'><%= items[i].todo %></span> 
+                <% }else if(items[i].deleted === true){%>
+                <span.parentNode class="deleted"><%= items[i].todo %></span>
+                <% }else{ %>
+                    <span><%= items[i].todo %></span> 
+                    <% } %>    
+                    <!--An item in the Todo List-->
+            <span class='fa fa-trash'></span> 
         </li>
     <% } %>
     </ul>
