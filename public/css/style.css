@@ -5,3 +5,16 @@ h1{ /*selecting the h1 element in the EJS file*/
     color: gray; /*sets the text colour to gray*/
     text-decoration: line-through; /*applies a strike through styling to the text*/
 } /*closing the selector*/
+.deleted{ 
+    display: none !important;
+}
+li:hover{
+    cursor: pointer;
+}
+body{
+    background: rgb(70, 255, 224);
+}
+
+li {
+    width: 20%;
+}
